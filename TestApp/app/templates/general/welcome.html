@@ -1,0 +1,13 @@
+﻿<div id="welcomePage" layout="column">
+    <div flex="40"></div>
+    <div layout="row">
+        <div flex="60"></div>
+        <div layout="column">
+            <h1>Welcome to<br />Test APP</h1>
+            <button id="getStarted" ui-sref="logout">Logout</button>
+            <div>List: {{vm.message}}</div>
+            <div ng-repeat="item in vm.valuesList">{{item}}</div>
+        </div>
+    </div>
+    <div flex></div>
+</div>

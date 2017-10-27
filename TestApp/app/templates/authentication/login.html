@@ -1,0 +1,55 @@
+﻿<div id="loginPage" layout="column">
+    <div flex="20"></div>
+    <div layout="row" layout-xs="column">
+        <div flex="50" layout="column">
+            <div flex="20"></div>
+            <div layout="row">
+                <div flex="50"></div>
+                <div flex="40">
+                    <span>Logo Here</span>
+                </div>
+            </div>
+        </div>
+        <div flex="50" layout="column">
+            <div layout="row">
+                <div flex="10"></div>
+                <form layout="column" flex="40">
+                    <h2>Log In</h2>
+                    <span></span>
+                    <div layout="row" class="inputRow">
+                        <i class="material-icons">face</i>
+                        <input flex type="text" id="username" class="cpIconInput" data-ng-model="vm.loginData.userName" placeholder="Username" required autofocus>
+                    </div>
+                    <span></span>
+                    <div layout="row" class="inputRow">
+                        <span>
+                            <i class="material-icons">lock</i>
+                            <md-tooltip md-direction="bottom">
+                                Please contact your client administrator for password issues
+                            </md-tooltip>
+                        </span>
+                        <input flex type="password" id="password" class="cpIconInput" data-ng-model="vm.loginData.password" placeholder="Password" required>
+                    </div>
+                    <span></span>
+                    <div layout="row" class="inputRow">
+                        <i class="material-icons">dns</i>
+                        <input flex type="text" id="dbServer" class="cpIconInput" data-ng-model="vm.loginData.dbServer" placeholder="DB Server" required autofocus>
+                    </div>
+                    <span></span>
+                    <div layout="row" class="inputRow">
+                        <i class="material-icons">list</i>
+                        <input flex type="text" id="dbName" class="cpIconInput" data-ng-model="vm.loginData.dbName" placeholder="DB Name" required autofocus>
+                    </div>
+                    <span></span>
+                    <button type="submit" id="loginButton" data-ng-click="vm.login()" class="cpSubmit">Log In</button>
+                    <div class="cpError" data-ng-hide="vm.message == ''">
+                        {{vm.message}}
+                    </div>
+                </form>
+                <div flex="50"></div>
+            </div>
+            <div flex></div>
+        </div>
+    </div>
+    <div flex></div>
+</div>

@@ -1,0 +1,69 @@
+﻿<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="cache-control" content="max-age=0" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="expires" content="0" />
+    <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+    <meta http-equiv="pragma" content="no-cache" />
+    <title>Test App</title>
+
+    <!-- Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Archivo+Black' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link href="content/css/Site.css" rel="stylesheet" />
+    <link href="content/css/angular-material.min.css" rel="stylesheet" />
+
+    <!-- Library Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-mocks.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-resource.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+    <script src="content/js/angular-local-storage.min.js"></script>
+    <script src="content/js/angular-ui-router.min.js"></script>
+
+
+
+    <!-- Application Script -->
+    <script src="app/app.module.js"></script>
+    <script src="app/app.routes.js"></script>
+
+    <!-- Services -->
+    <script src="app/common/services/authService.js"></script>
+    <script src="app/common/services/authInterceptorService.js"></script>
+    <script src="app/common/services/tokensManagerService.js"></script>
+    <script src="app/common/services/valuesService.js"></script>
+
+    <!-- Controllers -->
+    <script src="app/controllers/authentication/loginController.js"></script>
+    <script src="app/controllers/authentication/logoutController.js"></script>
+    <script src="app/controllers/general/welcomeController.js"></script>
+</head>
+
+<body data-ng-app="testApp">
+
+    <div class="main" layout="row">
+        <main-menu></main-menu>
+
+        <div flex class="viewHolder">
+            <top-menu></top-menu>
+            <div class="view" ui-view></div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
