@@ -75,4 +75,25 @@ namespace TestApp
         }
     }
 
+    public class DataAccessConfigurationProxy : Data.IDataAccessConfiguration
+    {
+        private readonly Data.IDataAccessConfigurationFactory factory;
+        private readonly IConnectionStringGenerator generator;
+
+        public DataAccessConfigurationProxy(
+            Data.IDataAccessConfigurationFactory factory, IConnectionStringGenerator generator)
+        {
+            this.factory = factory;
+            this.generator = generator;
+        }
+
+        public string ConnectionString
+        {
+            get { return GetRealInstance().ConnectionString; }
+            set { }
+        }
+
+        private Data.IDataAccessConfiguration GetRealInstance() =>
+            this.factory.GetConfiguration(this.generator.GetConnectionString());
+    }
 }

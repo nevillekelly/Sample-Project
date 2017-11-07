@@ -97,8 +97,9 @@ namespace TestApp
             container.RegisterSingleton<IRequestMessageAccessor>(new RequestMessageAccessor(container));
             container.Register<IConnectionStringGenerator, ConnectionStringGenerator>();
             container.Register<Data.IDataAccessConfigurationFactory, Data.DataAccessConfigurationFactory>();
+            container.Register<Data.IDataAccessConfiguration, DataAccessConfigurationProxy>();
 
-            container.Register(() => container.GetInstance<Data.IDataAccessConfigurationFactory>().GetConfiguration(container.GetInstance<IConnectionStringGenerator>().GetConnectionString()));
+            //container.Register(() => container.GetInstance<Data.IDataAccessConfigurationFactory>().GetConfiguration(container.GetInstance<IConnectionStringGenerator>().GetConnectionString()));
             container.Register<Data.IRepository, Data.SampleRepository>();
 
             container.EnableHttpRequestMessageTracking(config);
