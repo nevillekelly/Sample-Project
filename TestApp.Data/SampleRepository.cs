@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using TestApp.Common;
 
 namespace TestApp.Data
@@ -10,12 +11,18 @@ namespace TestApp.Data
         public SampleRepository(IDataAccessConfiguration connectionSettings)
         {
             ConnectionSettings = connectionSettings;
-            _connectionString = ConnectionSettings.ConnectionString;
+        }
+
+        public IEnumerable<string> GetList()
+        {
+            var connStr = ConnectionSettings.ConnectionString;
+
+            return new List<string>() { connStr, "Test1", "Test2", "Test3" };
         }
     }
 
     public interface IRepository
     {
-
+        IEnumerable<string> GetList();
     }
 }

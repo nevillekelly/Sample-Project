@@ -19,8 +19,9 @@ namespace TestApp.Controllers
         {
             var dbServer = PrincipalInformationExtractor.GetInfo(ActionContext.RequestContext.Principal, "dbServer");
             var dbName = PrincipalInformationExtractor.GetInfo(ActionContext.RequestContext.Principal, "dbName");
-
-            return new string[] { "value1", "value2", dbServer, dbName };
+            var list = Repo.GetList() as List<string>;
+            list.AddRange(new string[] { dbServer, dbName });
+            return list;
         }
 
         // GET api/values/5
